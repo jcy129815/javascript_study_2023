@@ -6,8 +6,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>자바스크립트 시작</title>
+    <script>
+        /*내부스크립트위치*/
+    </script>
 </head>
 <body>
-    
+    <!-- 태그 작성위치 -->
+    <p>1+1</p>
+    <script>
+        /*내부 스크립트 위치(body)*/
+        // 한줄 주석 처리
+        /*여러줄 주석 처리*/
+        //객체지향언어 = 자바스크립트
+        //var 변수명 대입연산자 대입데이터
+        var a = 10;
+        var b = 20;
+        console.log(a);
+        document.write(b);
+        //화면에 변수를 출력한다
+        //콘솔창에 변수를 출력한다
+        //객체.속성
+        //객체.메서드()
+        //객체.속성.메서드()
+        //---------------------------
+        //데이터 타입 = string(문자) number(숫자)
+        console.log('1+1'); //따음표('')에 묶인 데이터 = 문자
+        console.log(1+1); //2
+        console.log('2+'+1); 
+        //2개 이상 데이터 묶어서 사용하지
+        //숫자 + 숫자 = 숫자
+        //문자 + 문자 = 문자
+        //문자 + 숫자 = 문자
+        //-------------------------------------
+        var box1 = 10;
+        var box2 = '10';
+        var box3 = 20;
+        var box4 = 1;
+
+        console.log(box1,box2,box3,box4) //,는 값을 각각 출력
+        console.log(box1 + box2 + box3 + box4) 
+        console.log(typeof(box1+box3))
+        document.write(typeof(box1+box3))
+        console.log('box1='+box1)
+        console.log('box2='+box2)
+        console.log('box3='+box3)
+        console.log('box4='+box4)
+        //box1+box3=30
+        console.log('box1+box3='+(box1+box3))
+        //box1+box3+box4 = 31
+        console.log('box1+box3+box4='+(box1+box3+box4))
+        //box1+box2 = 1010
+        console.log('box1+box2='+(box1+box2))
+        //box3+box4 = 21
+        console.log('box3+box4='+(box3+box4))
+        //2*1=2
+        //2*2=4
+        console.log('2*1='+(2*1))
+        console.log('2*2='+(2*2))
+        console.log('-------------------------')
+        
+        var str1 = 'javascript'
+        console.log(typeof(str1))
+        //속성 length 문자열의 길이를 알려주는 속성
+        console.log(str1.length) //10
+        console.log('str1.length :' + (str1.length)) //Dstr1.length : 10
+
+    </script>
 </body>
 </html>

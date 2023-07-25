@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자바스크립트2.변수</title>
+</head>
+<body>
+    <script>
+
+        //변수명 중복 불가(생성 시)
+        //변수는 한번에 한가지 값만 담기 가능
+        //변수 선언 키워드 var, let, const
+        //var == vanilaJS 오랜된 변수 선언 키워드 (변수명이 중복돼도 넘어가 버림 해서 오류 생길 확률 올라감)
+        //let, cinst == ES5 2015년 이후 변수키워드 
+        //var 변수중복 에러를 체크하지 못한다
+        //let 변수중복 에러를 체크 할 수있다
+        let a = 1;
+        console.log(a)//1
+        let b = 2;
+        console.log(b)//2
+
+        let c = 10;       //생성
+        console.log(c)//10
+        c = 11;           //기존 변수 값을 수정 및 변환
+        console.log(c)//11
+
+        let year = 2023;
+        document.write(year+'년도')
+        year = 2024;
+        document.write(year+'년도')
+    </script>
+</body>
+</html>
