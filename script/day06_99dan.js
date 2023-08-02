@@ -10,6 +10,7 @@ console.log(pTag)
 // dan99Wrap.appendChild (pTag)
 function dan99(first){
     pTag.innerHTML = `${first}x1=${first*1}<br>`
+    //그냥 =인 이유는 다음 버튼 눌렀을때 이전것을 지우고 다음 계산을 하게 할려는 것이다 
     pTag.innerHTML += `${first}x2=${first*2}<br> `
     pTag.innerHTML += `${first}x3=${first*3}<br> `
     pTag.innerHTML += `${first}x4=${first*4}<br> ` 
