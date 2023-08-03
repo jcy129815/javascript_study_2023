@@ -58,8 +58,8 @@
     </div>
     <script>
         //변수 보유출력, 사용출력, x버튼, 전액사용버튼
-        const user_point = document.querySelector('#user_point')
-        const use_point = document.querySelector('#use_point')
+        const user_point = document.querySelector('#user_point')/*보유*/
+        const use_point = document.querySelector('#use_point')/*사용*/
         const point_reset = document.querySelector('#point_reset')
         const point_all_btn = document.querySelector('#point_all_btn')
         let num0 = Number(window.prompt('사용자님의 포인트를 입력하세요'))
@@ -69,11 +69,16 @@
         point_reset.style.opacity = 0;
         //전액사용 버튼을 누르면 보유 포인트가 사용 포인트로 들어가며 X버튼 보임
         point_all_btn.addEventListener('click',function(){
-            if(user_point.value>=1){point_reset.style.opacity = 1;}
+            if(user_point.value>=1){
+                point_reset.style.opacity = 1;
+                if(user_point.value <= 1000){/*1000원 이하일 경우 팝업창 출력*/
+                    window.alert('포인트는 1,000원 이상 사용 가능합니다')
+                }
+            }
             use_point.value = user_point.value
             user_point.value = 0
         })
-        point_reset.addEventListener('click',function(){
+        point_reset.addEventListener('click',function(){/*리셋 버튼 클릭시 사용=0 보유=n, X버튼 감춤*/
             point_reset.style.opacity = 0;
             use_point.value = 0
             user_point.value = num0
