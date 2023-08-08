@@ -1,0 +1,89 @@
+main {width: 1200px; margin:0 auto;}
+main section {text-align: center;}
+main #video {margin: 80px 0;}
+main .category {
+    font-size: 1rem;
+}
+main .category::after{
+    display: block; content: ''; background: #aaa;
+    width: 20px; height: 2px; margin:20px auto 0;
+}
+main h1 {
+    font-size: 1.57rem;
+    padding: 25px 0;
+}
+main .contents {
+    color: gray; margin-bottom: 30px;
+}
+/*카히스토리 영상*/
+/*카히스토리 영상 - 탭 제목, 내용*/
+main #video .tab_title {display: inline-block; margin-bottom: 30px;} 
+main #video .tab_title a {display: inline-block; width: 100px; padding-bottom: 20px; margin-right: 25px;}
+main #video .tab_title a:last-child {margin-right: 0;} 
+main #video .tab_title .active {
+    border-bottom:  5px solid lightskyblue;
+} 
+main #video .tab_contents {
+    position: relative;
+} 
+main #video .tab_contents .tab_c1 {} 
+main #video .tab_contents .tab_c1 img {
+    width: 200px; position: absolute; top: 210px; right: 45px;
+} 
+main #video .tab_contents .tab_c1 video {width: 80%; margin:0 auto;} 
+main #video .tab_contents .tab_c2 {} 
+main #video .tab_contents .tab_c2 img {width: 80%; margin:0 auto;} 
+main #video .tab_contents .active {} 
+/*자주이용*/
+main #menu .tab_title {
+    display: flex; justify-content: center;
+    border-bottom: 1px solid #888;
+    margin-bottom: 50px;
+}
+main #menu .tab_title a {
+    background: lightgreen;
+    width: 150px; padding: 20px 0;
+    margin-right: 10px; position: relative; bottom: -1px; background: #fff;
+    border: 1px solid #888; border-bottom: 1px solid #888;
+}
+main #menu .tab_title a:last-child {margin-right: 0;}
+main #menu .tab_title .active {
+    border: 1px solid #888;
+    border-top: 5px solid #2439f0;
+    border-bottom: 1px solid #fff;
+}
+/*메뉴 탭*/
+main #menu .tab_contents {}
+main #menu .tab_contents .tab_c1 {
+    display: flex; text-align: left;
+}
+main #menu .tab_contents .tab_c1 .left {width: 50%;}
+main #menu .tab_contents .tab_c1 .left h2 {
+    font-size: 1.57rem; letter-spacing: -0.02rem;
+    color: #2439f0;
+}
+main #menu .tab_contents .tab_c1 .left p {padding-top: 10px;}
+main #menu .tab_contents .tab_c1 .left p img {width: 90%;}
+main #menu .tab_contents .tab_c1 .left p a {color: #2439f0;}
+main #menu .tab_contents .tab_c1 .right {width: 50%;}
+main #menu .tab_contents .tab_c1 .right h3 {}
+main #menu .tab_contents .tab_c1 .right ul {}
+main #menu .tab_contents .tab_c1 .right ul li {
+    display: flex; border-bottom: 1px dashed #aaa; 
+    padding: 20px 0 10px;
+}
+main #menu .tab_contents .tab_c1 .right ul li:last-child {border: 0;}
+main #menu .tab_contents .tab_c1 .right ul li p {}
+main #menu .tab_contents .tab_c1 .right ul li p img {}
+main #menu .tab_contents .tab_c1 .right ul li .contents {padding-left: 15px;}
+main #menu .tab_contents .tab_c1 .right ul li .contents .num {
+    font-weight: 700; font-size: 0.8rem; 
+    text-align: left; color: #2439f0;
+} 
+main #menu .tab_contents .tab_c1 .right ul li .contents .con {padding-top: 15px;}
+main #menu .tab_contents .tab_c1 .right ul li .contents .con em {font-size: 1.5rem; color:black;}
+main #menu .tab_contents .tab_c1 .right ul li .contents .con span {font-size: 0.8rem;}
+
+main #menu .tab_contents .tab_c2 {height: 400px; background: lightcoral;}
+main #menu .tab_contents .tab_c3 {height: 400px; background: lightgoldenrodyellow;}
+main #menu .tab_contents .tab_c4 {height: 400px;background: lightseagreen;}
