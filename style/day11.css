@@ -19,7 +19,8 @@ main .contents {
 /*카히스토리 영상 - 탭 제목, 내용*/
 main #video .tab_title {display: inline-block; margin-bottom: 30px;} 
 main #video .tab_title a {display: inline-block; width: 100px; padding-bottom: 20px; margin-right: 25px;}
-main #video .tab_title a:last-child {margin-right: 0;} 
+main #video .tab_title a:last-child {margin-right: 0;}
+/*탭 제목 활성화 디자인 + js class 호출용*/ 
 main #video .tab_title .active {
     border-bottom:  5px solid lightskyblue;
 } 
@@ -47,6 +48,7 @@ main #menu .tab_title a {
     border: 1px solid #888; border-bottom: 1px solid #888;
 }
 main #menu .tab_title a:last-child {margin-right: 0;}
+/*탭 제목 활성화 디자인 + js class 호출용*/ 
 main #menu .tab_title .active {
     border: 1px solid #888;
     border-top: 5px solid #2439f0;
