@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤제어</title>
+    <style>
+        body, html {
+            height: 300vh;
+            background: linear-gradient(aqua, lime, yellow, pink);
+            /*스크롤 제어 애니메이션 css (body 선택자에)*/
+            scroll-behavior: smooth; /*스크롤 이동을 부드럽게 해줌*/
+        }
+        #pst {
+            position: fixed; left: 50px; top: 50px;
+            background: #eee; padding: 20px;
+        }
+        #container section {
+            line-height: 100vh; text-align: center;
+            border: 5px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="pst">
+        <button class="tab" type="button">상품정보</button>
+        <button class="tab" type="button">리뷰</button>
+        <button class="tab" type="button">질문답변</button>
+    </div>
+    <div id="container">
+        <section><h1>상품정보</h1></section>
+        <section><h1>리뷰</h1></section>
+        <section><h1>질문답변</h1></section>
+    </div>
+    <script>
+        // 자바스크립트으 스크롤 제어
+        const tabBtn = document.querySelectorAll('.tab')
+        const section = document.querySelectorAll('section')
+        console.log(tabBtn,section)
+
+        //리뷰 클릭시 리뷰 section으로이동
+        /* tabBtn[1].addEventListener('click',function(){
+            window.scrollTo(0, section[1].offsetTop)
+        }) */
+        tabBtn.forEach(function(t,i){
+            t.addEventListener('click',function(){
+                window.scrollTo(0, section[i].offsetTop)
+            })
+        })
+    </script>
+</body>
+</html>

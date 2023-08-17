@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤제어</title>
+    <style>
+        body, html {
+            height: 300vh;
+            background: linear-gradient(aqua, lime, yellow, pink);
+            /*스크롤 제어 애니메이션 css (body 선택자에)*/
+            scroll-behavior: smooth; /*스크롤 이동을 부드럽게 해줌*/
+        }
+        #pst {
+            position: fixed; left: 50px; top: 50px;
+            background: #eee; padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button id="pst" type="button">위치제어</button>
+    <script>
+        // 자바스크립트으 스크롤 제어
+        const pstBtn = document.querySelector('#pst')
+        console.log(pstBtn)
+        pstBtn.addEventListener('click',function(){                                //a태그에도 쓸수 있나?
+            //By 현재 스크롤 위치 기준 스크롤 이동 상대좌표 기준 메소드
+            window.scrollBy(0,100)
+            //To 윈도우의 절대좌표 기준으로 이동 메소드
+            //1. 스크롤 이동 시 단순 x,y좌표값으로 이동할 때
+            // window.scrollTo(0, 500)
+            //2. 스크롤 이동시 다른 함수를 호출이 필요할 때
+            // window.scrollTo({left:0, top:500})
+        })
+    </script>
+</body>
+</html>

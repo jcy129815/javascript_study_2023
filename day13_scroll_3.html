@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤제어</title>
+    <style>
+        body, html {
+            height: 300vh;
+            background: linear-gradient(aqua, lime, yellow, pink);
+            /*스크롤 제어 애니메이션 css (body 선택자에)*/
+            scroll-behavior: smooth; /*스크롤 이동을 부드럽게 해줌*/
+        }
+        #pst {
+            position: fixed; left: 50px; top: 50px;
+            background: #eee; padding: 20px;
+        }
+        #container section {
+            line-height: 100vh; text-align: center;
+            border: 5px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="pst">
+        <button class="tab" type="button">상품정보</button>
+        <button class="tab" type="button">리뷰</button>
+        <button class="tab" type="button">질문답변</button>
+    </div>
+    <div id="container">
+        <section><h1>상품정보</h1></section>
+        <section><h1>리뷰</h1></section>
+        <section><h1>질문답변</h1></section>
+    </div>
+    <script>
+        // 자바스크립트으 스크롤 제어
+        const tabBtn = document.querySelectorAll('.tab')
+        const section = document.querySelectorAll('section')
+        console.log(tabBtn,section)
+
+        //pagYOffset 스크롤을 얼마나 움직였는지
+        //클릭 했을 때 실행 => click event
+        //스크롤 했을 때 실행 => scroll event
+
+        //tabBtn 초기 숨기기
+        for(let i of tabBtn){i.style.display='none'}
+        window.addEventListener('scroll',function(){
+            console.log(window.pageYOffset)//현재 스크롤 이동 값을 알려준다 이 값을 매겨서 어느정도 스크롤 내렸을때 뭔가 보이게 할 수 있다
+            if (window.pageYOffset > section[1].offsetTop-100) { //section[1].offsetTop => 리뷰보다 100px 적을때 보이도록
+                //300보다 스크롤값이 크면 tabBtn을 보임
+                for(let i of tabBtn){i.style.display='inline-block'}
+            }else{
+                //300보다 스크롤값이 적으면 tabBtn을 가림
+                for(let i of tabBtn){i.style.display='none'}
+            }
+        })
+    </script>
+</body>
+</html>

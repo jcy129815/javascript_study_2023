@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/reset.css">
+    <title>스크롤제어</title>
+    <style>
+        body,html {scroll-behavior: smooth;}
+        header {
+            position: fixed; top: 0; right: 0; left: 0; padding: 20px;
+        }
+        header h1 {font-size: 2rem; letter-spacing: -0.02em; line-height: 50px;}
+        header nav {margin-left: 15px;}
+        header nav a {display: inline-block; margin-right: 15px; font-size: 0.7rem;}
+        header nav a:last-child {margin-right: 0;}
+
+        aside {position: fixed; left: 10px; top: 40%; height: 30px;}
+        aside .bar {
+            display: block; margin-bottom: 5px;
+            height: 3px;
+        }
+        aside .bar:last-child{margin-bottom: 0;}
+        aside .active {}
+
+        main {}
+        main .bg {height: 100vh; background-position: center; background-size: cover;}
+        main .bg1 {background: url(./images/bg1.jpg);}
+        main .bg2 {background: url(./images/bg2.jpg);}
+        main .bg3 {background: url(./images/bg3.jpg);}
+        main .bg4 {background: url(./images/bg4.jpg);}
+
+        #mouse {
+            width: 50px; height: 50px; 
+            border: 1px solid #fff;
+            border-radius: 50%; 
+            /*화면 최상단 스크롤 상관없이 고장 마우스 따라가는 css*/
+            position: fixed; left: 0; top: 0; z-index: 999;
+            transform: translate(-50%, -50%);
+            transition: all 0.2s linear; /*애니매이션 기능 추가*/
+            /*필수속성:마우스 따라다니는 이미지 만들경우*/
+            /*(위)링크, 버튼 등 선택이 안되는 문제 해결*/
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="mouse"></div>
+    <header>    
+        <h1>Interior view</h1>
+        <nav>
+            <a href="#">A</a>
+            <a href="#">B</a>
+            <a href="#">C</a>
+            <a href="#">D</a>
+        </nav>
+    </header>
+    <aside>
+        <span class="bar active"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </aside>
+    <main>
+        <div class="bg bg1"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+        <div class="bg bg4"></div>
+    </main>
+    <!-- ---------------------------------------------- -->
+    <script>
+        //변수 => nav a / aside .bar / main .bg
+        const nav = document.querySelectorAll('nav > a')
+        const aside = document.querySelectorAll('aside > .bar')
+        const main = document.querySelectorAll('main > .bg')
+        console.log(nav, aside ,main)
+        
+        nav.forEach(function(t,i){
+            t.addEventListener('click',function(e){
+                e.preventDefault()
+                window.scrollTo(0, main[i].offsetTop)
+            })
+        })
+        aside.forEach(function(t,i){
+            t.addEventListener('click',function(e){
+                e.preventDefault()
+                window.scrollTo(0, main[i].offsetTop)
+            })
+        })
+        for(let j of aside){
+            j.style.width = '30px'
+            j.style.background = '#000'
+        }
+        const body = document.querySelector('body, html')
+        window.addEventListener('scroll',function(){
+            // console.log('body.scrollTop>>', body.scrollTop)
+            aside.forEach(function(t,i){
+                if(body.scrollTop >= main[i].offsetTop){
+                    console.log('.')
+                    for(let j of aside){
+                        j.style.width = '30px'
+                        j.style.background = '#000'
+                    }   
+                    t.style.width = '50px'
+                    t.style.background = '#fff'
+                }
+            })
+        })
+
+        //마우스 움직일 때 이벤트
+        const mouseImg = document.querySelector('#mouse')
+        console.log(mouseImg)
+        window.addEventListener('mousemove',function(e){
+            console.log(e)
+            mouseImg.style.left = `${e.clientX}px`
+            mouseImg.style.top = `${e.clientY}px`
+        })
+    </script>
+</body>
+</html>
